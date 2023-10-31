@@ -41,7 +41,7 @@ namespace Nessie.SpaceShooter.OOP
             }
             
             ParticleSystem hitParticles = Instantiate(HitVFX, transform.position, transform.rotation);
-            //hitParticles.transform.up = transform.position - other.transform.position;
+            //hitParticles.transform.up = other.transform.position - transform.position;
             
             health.Damage(Damage);
             Destroy(gameObject);
