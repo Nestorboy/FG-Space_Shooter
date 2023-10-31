@@ -1,5 +1,5 @@
 {
-    "name": "Shooter",
+    "name": "ShooterActions",
     "maps": [
         {
             "name": "Player",
