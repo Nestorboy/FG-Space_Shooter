@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7496324411512814495}
   - component: {fileID: 8091825183597432854}
   - component: {fileID: 9086640330282312931}
+  - component: {fileID: 8775217895418674916}
   m_Layer: 0
   m_Name: EnemyDeath_VFX
   m_TagString: Untagged
@@ -4863,7 +4864,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: 0, z: 0.1}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
@@ -4881,3 +4882,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &8775217895418674916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594024463287946077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b21ba281080e4d4fb355514e7468385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

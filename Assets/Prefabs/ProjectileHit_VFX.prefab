@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6036412269654392232}
   - component: {fileID: 7393052476342856087}
   - component: {fileID: 6638423903274368783}
+  - component: {fileID: 9196131593481895323}
   m_Layer: 0
   m_Name: Sides
   m_TagString: Untagged
@@ -4868,7 +4869,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: 0, z: 0.1}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
@@ -4886,6 +4887,18 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &9196131593481895323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070559363729498792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b21ba281080e4d4fb355514e7468385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3594024463287946077
 GameObject:
   m_ObjectHideFlags: 0
@@ -4897,6 +4910,7 @@ GameObject:
   - component: {fileID: 7496324411512814495}
   - component: {fileID: 8091825183597432854}
   - component: {fileID: 9086640330282312931}
+  - component: {fileID: 909510691611208070}
   m_Layer: 0
   m_Name: ProjectileHit_VFX
   m_TagString: Untagged
@@ -5115,17 +5129,17 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.3137255, g: 0.2, b: 0.40784314, a: 1}
         key1: {r: 0.14901961, g: 0.12156863, b: 0.16862746, a: 1}
-        key2: {r: 1, g: 1, b: 1, a: 0}
-        key3: {r: 1, g: 1, b: 1, a: 0}
-        key4: {r: 1, g: 1, b: 1, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 0}
+        key3: {r: 0, g: 0, b: 0, a: 0}
+        key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 32768
         ctime1: 65535
-        ctime2: 65535
-        ctime3: 65535
-        ctime4: 65535
+        ctime2: 0
+        ctime3: 0
+        ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -5138,7 +5152,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 1
-        m_ColorSpace: 0
+        m_ColorSpace: -1
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -9750,7 +9764,7 @@ ParticleSystemRenderer:
   m_NormalDirection: 1
   m_ShadowBias: 0
   m_RenderAlignment: 0
-  m_Pivot: {x: 0, y: 0, z: 0}
+  m_Pivot: {x: 0, y: 0, z: 0.1}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
@@ -9768,3 +9782,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &909510691611208070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594024463287946077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b21ba281080e4d4fb355514e7468385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
