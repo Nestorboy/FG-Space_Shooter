@@ -27,12 +27,12 @@ namespace Nessie.SpaceShooter.Player.DOD
         {
             _shooterActions = new ShooterActions();
             _shooterActions.Player.SetCallbacks(this);
-            _camera = Camera.main;
         }
 
         protected override void OnStartRunning()
         {
             _shooterActions.Enable();
+            _camera = Camera.main;
         }
 
         protected override void OnStopRunning()
