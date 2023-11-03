@@ -12,6 +12,7 @@ namespace Nessie.SpaceShooter.OOP
 
         private Rigidbody _rb;
         private Health _health;
+        private PlayerShooter _player;
         
         private bool _isAttackReady = true;
 
@@ -19,6 +20,7 @@ namespace Nessie.SpaceShooter.OOP
         {
             _rb = GetComponent<Rigidbody>();
             _health = GetComponent<Health>();
+            _player = GameManager.Instance.Player;
         }
 
         private void OnEnable()
@@ -48,9 +50,9 @@ namespace Nessie.SpaceShooter.OOP
 
         private void Update()
         {
-            if (GameManager.Instance.Player)
+            if (_player)
             {
-                Vector3 toPlayer = (GameManager.Instance.Player.transform.position - transform.position).normalized;
+                Vector3 toPlayer = (_player.transform.position - transform.position).normalized;
                 float recover = 1f + 0.5f * Mathf.Max(0f, -Vector2.Dot(_rb.velocity.normalized, toPlayer));
                 _rb.velocity = Vector2.MoveTowards(_rb.velocity, toPlayer * Speed, recover * Acceleration * Time.deltaTime);
             }
