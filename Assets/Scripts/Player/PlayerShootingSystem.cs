@@ -24,15 +24,15 @@ namespace Nessie.SpaceShooter.Player.DOD
             
             aimJob.Complete();
             
-            var ecbSingleton = new EntityCommandBuffer(Allocator.TempJob);
+            var ecb = new EntityCommandBuffer(Allocator.TempJob);
             JobHandle shootJob = new PlayerShootingJob()
             {
-                EntityCommandBuffer = ecbSingleton,
+                ECB = ecb,
                 DeltaTime = SystemAPI.Time.DeltaTime,
             }.Schedule(state.Dependency);
             
             shootJob.Complete();
-            ecbSingleton.Playback(state.EntityManager);
+            ecb.Playback(state.EntityManager);
         }
 
         [BurstCompile]
@@ -61,7 +61,7 @@ namespace Nessie.SpaceShooter.Player.DOD
     [BurstCompile]
     public partial struct PlayerShootingJob : IJobEntity
     {
-        public EntityCommandBuffer EntityCommandBuffer;
+        public EntityCommandBuffer ECB;
         public float DeltaTime;
         
         public void Execute(in PlayerTag player, ref Shooting data, in ShooterInput input, ref LocalTransform transform)
@@ -75,14 +75,14 @@ namespace Nessie.SpaceShooter.Player.DOD
             if (input.Shooting)
             {
                 data.Timer = data.Cooldown;
-                Entity entity = EntityCommandBuffer.Instantiate(data.Prefab);
-                EntityCommandBuffer.SetComponent(entity, new LocalTransform()
+                Entity entity = ECB.Instantiate(data.Prefab);
+                ECB.SetComponent(entity, new LocalTransform()
                 {
                     Position = transform.Position,
                     Rotation = transform.Rotation,
                     Scale = 1f,
                 });
-                EntityCommandBuffer.SetComponent(entity, new PhysicsVelocity()
+                ECB.SetComponent(entity, new PhysicsVelocity()
                 {
                     Linear = transform.Up() * data.Speed,
                 });
